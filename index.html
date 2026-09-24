@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个页面</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="navbar">
+        <h1>我的网站</h1>
+        <nav class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">关于</a>
+            <a href="#">联系</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="card">
+            <h2>关于我</h2>
+            <p>我是<strong>数字媒体技术</strong>本科,正在学<em>前端开发</em>。</p>
+            <img src="https://via.placeholder.com/200" alt="我的头像">
+            <br>
+            <a href="http://github.com" target="_blank">我的GitHub</a>
+        </section>
+
+        <section class="card">
+            <h2>技能</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+            </ul>
+            <ol>
+                <li>第一步：HTML</li>
+                <li>第二步：CSS</li>
+                <li>第三步：JS</li>
+                
+            </ol>
+        </section>
+
+        <section class="card">
+            <h2>学习计划</h2>
+            <table border="1">
+                <tr>
+                    <th>天数</th>
+                    <th>内容</th>
+                </tr>
+
+                <tr>
+                    <th>1-2天</th>
+                    <th>内容</th>
+                </tr>
+
+                <tr>
+                    <th>3-5天</th>
+                    <th>内容</th>
+                </tr>
+
+                <tr>
+                    <th>6-10天</th>
+                    <th>内容</th>
+                </tr>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>联系我</h2>
+            <form>
+                <label>姓名:</label>
+                <input type="text" placeholder="请输入姓名">
+                <br><br>
+                <label>邮箱:</label>
+                <input type="email" placeholder="请输入邮箱">
+                <br><br>
+                <label>留言:</label>
+                <textarea rows="4" cols="30" type="text" placeholder="请输入留言"></textarea>
+                <br><br>
+                <label>城市:</label>
+                <select>
+                    <option>杭州</option>
+                    <option>上海</option>
+                    <option>北京</option>
+                </select>
+                <br><br>
+                <button type="submit">提交</button>
+            </form>
+        </section>
+
+
+        <section class="card">
+            <h2>视频</h2>
+            <video width="320" controls>
+                <source src="movie.mp4" type="video/mp4">
+            </video>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>2026</p>
+    </footer>
+</body>
+</html>

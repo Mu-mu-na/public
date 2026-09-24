@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的的待办清单</title>
+    <style>
+        .box{
+            width: 200px;
+            margin: 50px auto;
+        }
+        input{padding: 8px;width: 200px;}
+        button{padding: 8px 15px;}
+        li{margin: 10px 0;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="todo-input" placeholder="请输入待办事项">
+        <button id="add-btn">添加</button>
+        <ul id="todo-list"></ul>
+    </div>
+    
+
+    <script>
+        let todos=[];
+
+        const elInput=document.querySelector('#todo-input');
+        const elBtn=document.querySelector('#add-btn');
+        const elList=document.querySelector('#todo-list');
+
+       function render(){
+        elList.innerHTML='';//先清空列表
+
+        todos.forEach((item,index)=>{
+            const li=document.createElement('li');
+
+            const span=document.createElement('span');
+            span.textContent=item;
+
+            const delBtn=document.createElement('button')
+            delBtn.textContent='删除';
+
+            delBtn.addEventListener('click',()=>{
+                todos.splice(index,1)
+                saveDate();
+                render();
+            })
+
+            li.appendChild(span);
+            li.appendChild(delBtn);
+            elList.appendChild(li);
+        })
+        
+       }
+
+       function saveDate(){
+           localStorage.setItem('myTodos',JSON.stringify(todos));
+       }
+
+       const saved=localStorage.getItem('myTodos');
+       if(saved){
+        todos=JSON.parse(saved);
+        render();
+       }
+
+       elBtn.addEventListener('click',()=>{
+        const text=elInput.value;
+
+        if(text===''){
+            alert('请输入内容');
+            return;
+        }
+
+        todos.push(text);
+        saveDate();
+        render();
+        elInput.value='';
+       })
+    </script>
+</body>
+</html>
